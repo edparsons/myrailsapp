@@ -9,10 +9,12 @@ group :production, :staging do
 end
 
 group :development, :test do
-  #gem "sqlite3"
+  gem 'sqlite3', '1.3.6'
 end
 
 gem 'json'
+
+gem 'twitter'
 
 # Gems used only for assets and not required
 # in production environments by default.
