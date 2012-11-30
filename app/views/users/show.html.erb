@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Twitter:</b>
+  @<%= @user.twitter %>
+</p>
+
+<p>
+  <b>Last Fetched:</b>
+  <%= @user.last_cached %>
+</p>
+
+<% @tweets.each do |t| %>
+  <div class="well well-small">
+  	<%=raw auto_link(t.text)%><br />
+  	<small><em>posted <%= time_ago_in_words(t.twitter_created_at) %> ago</em></small>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_user_path(@user), :class => "btn btn-small" %> 
+<%= link_to 'Back', users_path, :class => "btn btn-small" %>
